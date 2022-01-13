@@ -1,0 +1,142 @@
+.home {
+
+    &__swiper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 70px;
+
+        .swiper-slide {
+            padding: 25px 150px;
+
+            @include screen(1250) {
+                padding: 25px 0;
+            }
+        
+        }
+
+        &-slideTitle {
+            font: 600 55px/1.2 $openSans;
+            margin-bottom: 65px;
+
+            @include screen(1024) {
+                margin-bottom: 10px;
+            }
+
+            @include screen(900) {
+                font-size: 40px;
+            }
+
+            @include screen(768) {
+                
+                h4 {
+                    text-align: center;
+                }
+            }
+
+            @include screen(650) {
+                font-size: 25px;
+            }
+        }
+
+        &-slideText {
+            font: 400 18px/1.7 $openSans;
+            text-align: justify;
+        }
+
+        &-slideButton {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            .button {
+
+                &:first-child {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .row {
+            align-items: stretch;
+        }
+
+        .col-50 {
+            flex-direction: column;
+            padding: 0 5px;
+
+            @include screen(1024) {
+                justify-content: space-between;
+            }
+
+            @include screen(768) {
+                align-items: center;
+                width: 100%;
+            }
+
+            &_image {
+                justify-content: center;
+                align-items: center;
+                background: rgb(1,187,246);
+                background: radial-gradient(circle, rgba(1,187,246,0.7) 0%, rgba(4,31,132,0.6) 25%, rgba(4,19,52,0.3) 50%, rgba(4,19,52,0) 70%);
+
+                @include screen(768) {
+                    margin-bottom: 10px;
+                }
+
+                img {
+                    max-height: 450px;
+
+                    @include screen(1024) {
+                        max-height: none;
+                        width: 100%;
+                    }
+
+                    @include screen(768) {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        &-button-prev,
+        &-button-next {
+            width: 62px;
+            height: 62px;
+            top: 91%;
+            border: 3px solid $whiteHalf;
+            border-radius: 50%;
+            transition: .5s;
+
+            @include screen(768) {
+                top: 93%;
+                z-index: 9;
+            }
+
+            &:after {
+                font-size: 18px;
+                font-weight: 600;
+                color: $whiteHalf;
+                transition: .5s;
+            }
+
+            &:hover {
+                border-color: $white;
+                
+                &:after {
+                    color: $white;
+                }
+            }
+        }
+
+        &-button-prev {
+            left: calc(50% - 70px);
+        }
+
+        &-button-next {
+            right: calc(50% - 70px);
+        }
+
+    }
+}
+  
