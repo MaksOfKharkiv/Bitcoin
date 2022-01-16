@@ -41,13 +41,24 @@
 
         &-slideText {
             font: 400 18px/1.7 $openSans;
-            text-align: justify;
+
+            @include screen(768) {
+                
+                p {
+                    text-align: center;
+                }
+            }
         }
 
         &-slideButton {
             display: flex;
             justify-content: space-between;
             width: 100%;
+            margin: 80px 0 0;
+
+            @include screen(768) {
+                margin: 15px 0 0; 
+            }
 
             .button {
 
@@ -69,14 +80,7 @@
                 justify-content: space-between;
             }
 
-            @include screen(768) {
-                align-items: center;
-                width: 100%;
-            }
-
-            &_image {
-                justify-content: center;
-                align-items: center;
+            &__image {
                 background: rgb(1,187,246);
                 background: radial-gradient(circle, rgba(1,187,246,0.7) 0%, rgba(4,31,132,0.6) 25%, rgba(4,19,52,0.3) 50%, rgba(4,19,52,0) 70%);
 
@@ -92,8 +96,12 @@
                         width: 100%;
                     }
 
-                    @include screen(768) {
+                    @include screen(900) {
                         width: 80%;
+                    }
+
+                    @include screen(768) {
+                        width: 60%;
                     }
                 }
             }

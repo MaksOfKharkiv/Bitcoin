@@ -1,0 +1,76 @@
+.promo {
+    padding: 95px 0 125px;
+
+    @include screen(768) {
+        padding: 25px 0; 
+    }
+
+    &__item {
+        transition: .4s;
+        background: $white;
+        padding: 25px 45px 54px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: $dark;
+
+        @include screen(1124) {
+            padding: 15px; 
+        }
+
+        h4 {
+            font-size: 22px;
+            line-height: 27px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 27px;
+        }
+
+        &:hover {
+            background: $gold;
+
+            h4,
+            p {
+                color: $white;
+            }
+
+            .promo__image {
+
+                img {
+                    opacity: 0;
+
+                    &.hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__image {
+        position: relative;
+        margin-bottom: 10px;
+
+        img {
+            max-width: 70px;
+            transition: .4s;
+            opacity: 1;
+            max-height: 74px;
+
+            &.hover {
+                opacity: 0;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

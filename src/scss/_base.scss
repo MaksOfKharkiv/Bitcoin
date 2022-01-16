@@ -47,8 +47,13 @@ table {
 
 .container {
     max-width: 1200px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 
-    &-large {
+    &--large {
+        @extend .container;
         max-width: 1810px;
     }
 }
@@ -65,21 +70,24 @@ section {
     }
 }
 
-.container,
-.container-large {
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 .row {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @include screen(768) {
-        flex-direction: column; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-25 {
+        width: calc(25% - 21px);
+
+        @include screen(768) {
+            width: 100%;
+            margin-bottom: 10px; 
+        }
     }
 
     .col-50 {
@@ -88,6 +96,55 @@ section {
 
         @include screen(768) {
             width: 100%;
+            align-items: center;
+            padding-bottom: 20px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        &__image {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.main-title {
+    font: 600 45px/1 $poppins;
+    margin-bottom: 80px;
+
+    @include screen(1024) {
+        margin-bottom: 40px;
+    }
+
+    @include screen(900) {
+        font-size: 30px;
+    }
+
+    @include screen(768) {
+        margin-bottom: 20px;
+
+        h4 {
+            text-align: center;
+        }
+    }
+} 
+
+.main-text {
+    line-height: 1.6;
+    margin-bottom: 118px;
+
+    @include screen(1024) {
+        margin-bottom: 80px;
+    }
+
+    @include screen(768) {
+        margin-bottom: 20px;
+
+        p {
+            text-align: center;
         }
     }
 }
@@ -101,7 +158,6 @@ section {
     max-width: 220px;
     width: 100%;
     padding: 24px 0;
-    margin: 80px 0 0;
     transition: .5s;
 
     @include screen(1024) {
@@ -126,4 +182,8 @@ section {
         background: $gold;
         border-color: $gold;
     }
+}
+
+.gold-text {
+    color: $gold;
 }
