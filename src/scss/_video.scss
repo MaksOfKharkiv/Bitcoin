@@ -1,0 +1,109 @@
+.video {
+    padding-bottom: 170px;
+
+    @include screen(1024) {
+        padding-bottom: 95px; 
+    }
+
+    @include screen(768) {
+        padding-bottom: 25px; 
+    }
+
+    &__container {
+        position: relative;
+        background: $black;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        line-height: 0;
+
+        #videoplayer {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__play {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        transition: .3s;
+
+        &-button {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            left: calc(50% - 45px);
+            top: calc(50% - 45px);
+            z-index: 12;
+            border: 1px solid $white;
+            border-radius: 50%;
+            background: $white;
+            cursor: pointer;
+            transition: .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+
+            @include screen(768) {
+                width: 68px;
+                height: 68px;
+                left: calc(50% - 34px);
+                top: calc(50% - 34px);
+            }
+    
+            img {
+                width: 45px;
+
+                @include screen(768) {
+                    width: 30px; 
+                }
+            }
+    
+            .icon2 {
+                display: none;
+                padding-left: 5px;
+            }
+          
+            &:hover {
+                background: $header;
+                border-color: $header;
+                box-shadow: 0 0 35px 5px rgba(250,206,52,.5), 0 0 35px 10px rgba(250,206,52,.25);
+
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
+
+        &:hover {
+
+            .video-button{
+                opacity: 1;
+            }
+        }
+
+        &.paused {
+            background: url("../images/inline/video-poster.jpg") no-repeat 50% 50%;
+            background-size: cover;
+            box-shadow: inset 0 0 0 200vw rgba(255, 255, 255,.5);
+            transition: none;
+
+            .video-button {
+                opacity: 1;
+            }
+
+            .icon1 {
+                display: none;
+            }
+    
+            .icon2 {
+                display: block;
+            }
+        }
+    }
+}

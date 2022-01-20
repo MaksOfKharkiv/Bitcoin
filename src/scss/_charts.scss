@@ -72,6 +72,12 @@
             display: flex;
             align-items: center;
             width: 100%;
+            overflow: hidden;
+
+            .js-marquee {
+                display: flex;
+                width: 100%;
+            }
 
             @include screen(768) {
                 margin: 0 0 15px;
@@ -81,6 +87,11 @@
             &-item {
                 text-align: center;
                 width: 18%;
+
+                @include screen(600) {
+                    width: inherit;
+                    padding: 0 5px; 
+                }
 
                 div {
                     text-transform: uppercase;
@@ -98,13 +109,14 @@
         margin: 0 0 32px;
 
         @include screen(768) {
-            justify-content: center; 
+            justify-content: center;
+            margin: 0 0 15px;
         }
 
         h5 {
             font-weight: 700;
             font-size: 20px;
-
+            padding-right: 5px;
         }
 
         span {

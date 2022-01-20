@@ -97,11 +97,12 @@ const config = {
                 progressive: true
             }
         }),
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //       { from: "src/images/inline", to: "images/inline" },
-        //     ],
-        //   }),
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: "src/video", to: "video" },
+              { from: "src/images/inline", to: "images/inline" },
+            ],
+          }),
     ]
 };
 

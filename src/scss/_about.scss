@@ -5,6 +5,13 @@
         padding-bottom: 25px; 
     }
 
+    .main-title {
+
+        h4 {
+            text-align: left;
+        }
+    }
+
     .row {
         border: 1px dashed $white;
         padding: 120px 83px;
@@ -31,6 +38,12 @@
 
             &__image {
                 max-width: 380px;
+
+                img {
+                    @include screen(600) {
+                        width: 80%;
+                    }
+                }
             }
         }
     }

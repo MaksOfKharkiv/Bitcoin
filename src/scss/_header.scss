@@ -79,7 +79,7 @@
             padding: 31px 0 0;
             max-height: 0;
             overflow: hidden;
-            z-index: 5;
+            z-index: 25;
             transition: .3s;
 
             a {
@@ -103,6 +103,10 @@
                     border-radius: 0 0 5px 5px;
                 }
             }
+
+            @include screen(650) {
+                left: 360%;
+            }
         }
 
         &:hover {
@@ -119,6 +123,10 @@
         align-items: center;
         position: relative;
         margin-left: 45px;
+
+        @include screen(650) {
+            margin-left: 25px; 
+        }
 
         .input {
             margin: 0;
@@ -159,8 +167,12 @@
                 width: 250px;
                 background: $white;
 
-                @include screen(768) {
-                    width: 150px;
+                @include screen(500) {
+                    width:200px;
+                }
+
+                @include screen(400) {
+                    width:170px;
                 }
             }
 
@@ -168,8 +180,12 @@
                 transform: translateX(220px);
                 background: $white;
 
-                @include screen(768) {
-                    transform: translateX(120px);
+                @include screen(500) {
+                    transform: translateX(170px);
+                }
+
+                @include screen(500) {
+                    transform: translateX(140px);
                 }
 
                 img {

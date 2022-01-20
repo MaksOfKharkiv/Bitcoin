@@ -1,0 +1,124 @@
+.clients {
+    padding-bottom: 100px;
+
+    @include screen(768) {
+        padding-bottom: 25px; 
+    }
+
+    .container--large {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__swiper {
+        max-width: 1300px;
+        width: 100%;
+        border: 1px solid $white;
+        padding: 76px 68px 100px;
+        position: relative;
+
+        @include screen(1100) {
+            padding: 25px 10px; 
+        }
+
+        @include screen(992) {
+            padding: 15px 10px 60px; 
+        }
+    }
+
+    .row {
+
+        @include screen(992) {
+            flex-direction: column;
+
+        }
+    }
+
+    &__col-20 {
+        width: 20%;
+        text-align: center;
+
+        @include screen(992) {
+            width: 100%;
+        }
+    }
+
+    &__col-80 {
+        width: 80%;
+        padding: 25px 0 0 35px;
+
+        @include screen(1100) {
+            padding: 10px 0 0 10px; 
+        }
+
+        @include screen(992) {
+            width: 100%;
+            padding: 10px 0 0; 
+        }
+
+        p {
+            line-height: 1.8;
+
+            @include screen(992) {
+                line-height: 1.25;
+                text-align: justify;
+            }
+        }
+    }
+
+    &__photo {
+        border-radius: 8px;
+        margin-bottom: 23px;
+        max-width: 180px;
+    }
+
+    &__name {
+
+        h5 {
+            font-weight: 600;
+            line-height: 2;
+            color: $light;
+        }
+
+        h6 {
+            font-size: 15px;
+            color: $gold;
+        }
+    }
+
+    &__sign {
+        margin-top: 25px;
+    }
+
+    &__swiper-pagination {
+        position: absolute;
+    }
+
+    .swiper-pagination-bullet {
+        background: $gold;
+        opacity: 1;
+        width: 23px;
+        height: 23px;
+
+        @include screen(992) {
+            width: 12px;
+            height: 12px; 
+        }
+
+        &-active {
+            background: #effafc;
+        }
+    }
+
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 43px;
+        left: calc(100% - 183px);
+        width: 100%;
+
+        @include screen(992) {
+            bottom: 20px;
+            left: calc(50% - 40px);
+        }
+    }
+}
+  

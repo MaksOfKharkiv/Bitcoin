@@ -6,10 +6,6 @@
     box-sizing: border-box;
 }
 
- ::placeholder {
-     color: #424343;
-}
-
 ul {
     list-style: none;
 }
@@ -23,6 +19,29 @@ body {
     font: 400 17px/1 $poppins;
     color: $light;
     background: #041436 url('../images/background.jpg') no-repeat 50% 0;
+
+    @include screen(992) {
+        font-size: 16px;
+    }
+
+    @include screen(600) {
+        font-size: 15px;
+    }
+    
+    @include screen(450) {
+        font-size: 14px;
+    }
+}
+
+::placeholder {
+    color: $whiteHalf;
+    font-size: 16px;
+    line-height: 1.7;
+
+    @include screen(600) {
+        font-size: 15px;
+        line-height: 1.25;
+    }
 }
 
 a {
@@ -112,8 +131,12 @@ section {
 }
 
 .main-title {
-    font: 600 45px/1 $poppins;
+    font: 500 45px/1 $poppins;
     margin-bottom: 80px;
+
+    h4 {
+        text-align: center;
+    }
 
     @include screen(1024) {
         margin-bottom: 40px;
@@ -125,10 +148,6 @@ section {
 
     @include screen(768) {
         margin-bottom: 20px;
-
-        h4 {
-            text-align: center;
-        }
     }
 } 
 
@@ -161,21 +180,30 @@ section {
     transition: .5s;
 
     @include screen(1024) {
-        margin: 40px 0 0;
-    }
-
-    @include screen(900) {
         margin: 20px 0 0;
     }
 
+    @include screen(900) {
+        margin: 15px 0 0;
+    }
+
+    @include screen(600) {
+        max-width: 200px;
+        padding: 16px 0;
+    }
+
     @include screen(480) {
-        padding: 15px 0;
+        padding: 10px 0;
     }
 
     a {
         font: 600 18px/1 $openSans;
         color: $white;
         text-transform: uppercase;
+
+        @include screen(900) {
+            font-size: 15px;
+        }
     }
 
     &:hover {
